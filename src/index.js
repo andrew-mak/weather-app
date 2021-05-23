@@ -20,15 +20,15 @@ window.addEventListener('load', () => {
 
 function getWeatherInfo(lat, lon, city, zip) {
 
-  const weatherApiKey = process.env.WEATHER_API_KEY;
+  const weatherApiKey = '380df902b60bf5f0e2efb56a968afeb0';
 
   //https://openweathermap.org/current#data
-  const apiRequestCoords = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric&lang=en`;
+  const apiRequestCoords = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric&lang=en`;
 
-  apiRequestCity = `http://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=${weatherApiKey}&units=metric&lang=en`;
+  apiRequestCity = `https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=${weatherApiKey}&units=metric&lang=en`;
   //Barrow
 
-  apiRequestZip = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},BY&appid=${weatherApiKey}&units=metric&lang=en`;
+  apiRequestZip = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},BY&appid=${weatherApiKey}&units=metric&lang=en`;
 
   //choosing one of the ways of the request
   city
@@ -52,8 +52,8 @@ function getWeatherInfo(lat, lon, city, zip) {
 function tryDetermLocation() {
 
   //https://ipstack.com/quickstart
-  const apiIpstackKey = process.env.API_IPSTACK_KEY;
-  const ipstackRequest = `http://api.ipstack.com/check?access_key=${apiIpstackKey}`;
+  const apiIpstackKey = '938a30f211aaaa7f7f13677d50a26ba7';
+  const ipstackRequest = `https://api.ipstack.com/check?access_key=${apiIpstackKey}`;
   
   fetch(ipstackRequest)
     .then((response) => {
@@ -79,7 +79,7 @@ function fillPage(data) {
 
   icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`
+    `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`
   );
   const temp = data.main.temp;
   const description = data.weather[0].description;
