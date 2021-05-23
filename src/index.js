@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 
 function getWeatherInfo(lat, lon, city, zip) {
 
-  const weatherApiKey = WEATHERE_API_KEY;
+  const weatherApiKey = '380df902b60bf5f0e2efb56a968afeb0';
 
   //https://openweathermap.org/current#data
   const apiRequestCoords = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric&lang=en`;
@@ -52,7 +52,7 @@ function getWeatherInfo(lat, lon, city, zip) {
 function tryDetermLocation() {
 
   //https://ipstack.com/quickstart
-  const apiIpstackKey = IPSTACK_API_KEY;
+  const apiIpstackKey = '938a30f211aaaa7f7f13677d50a26ba7';
   const ipstackRequest = `http://api.ipstack.com/check?access_key=${apiIpstackKey}`;
   
   fetch(ipstackRequest)
